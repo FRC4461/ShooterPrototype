@@ -8,6 +8,9 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.FlywheelSystem;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /**
@@ -36,6 +39,7 @@ public class FlywheelCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    m_subsystem.m_flywheelMotor.set(ControlMode.PercentOutput, 1.0);
   }
 
   // Called once the command ends or is interrupted.

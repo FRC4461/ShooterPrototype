@@ -7,9 +7,15 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class FlywheelSystem extends SubsystemBase {
+  private final int flywheelMotorID = 0;
+  public TalonSRX m_flywheelMotor = new TalonSRX(flywheelMotorID);
+
   /**
    * Creates a new ExampleSubsystem.
    */
@@ -20,10 +26,9 @@ public class FlywheelSystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+    // This method will be called onPce per scheduler run
   }
 
   public void runMotor() {
-      // TODO: this
   }
 }

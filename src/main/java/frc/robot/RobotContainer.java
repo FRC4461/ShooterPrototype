@@ -15,6 +15,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.FlywheelSystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 /**
  * This class is where the bulk of the robot should be declared.  Since Command-based is a
@@ -36,8 +37,6 @@ public class RobotContainer {
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final FlywheelCommand m_flywheelCommand = new FlywheelCommand(m_flywheelSystem);
 
-
-
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
    */
@@ -46,9 +45,7 @@ public class RobotContainer {
     configureButtonBindings();
 
     // Set default commands
-    m_flywheelSystem.setDefaultCommand(
-      new RunCommand(() -> m_flywheelSystem.runMotor()));
-    
+    m_flywheelSystem.setDefaultCommand(m_flywheelCommand);
   }
 
   /**
